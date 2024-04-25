@@ -1,0 +1,11 @@
+[
+    {"type":"Sporting"},
+    {"type":"Hound"},
+    {"type":"Working"},
+    {"type":"Terrier"},
+    {"type":"Toy"},
+    {"type":"Non-Sporting"},
+    {"type":"Herding"},
+    {"type":"Miscellaneous Class"},
+    {"type":"Foundation Stock Service"}
+]

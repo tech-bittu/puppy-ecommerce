@@ -1,0 +1,7 @@
+[
+    {"type":"Infrequent"},
+    {"type":"Seasonal"},
+    {"type":"Frequent"},
+    {"type":"Occasional"},
+    {"type":"Regularly"}
+]

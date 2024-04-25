@@ -1,0 +1,10 @@
+.navbar img{
+    height: 85px !important;
+    width: 110px !important;
+}
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item button.nav-link
+{
+    border: inherit;
+    color: inherit;
+    background-color: inherit;
+}

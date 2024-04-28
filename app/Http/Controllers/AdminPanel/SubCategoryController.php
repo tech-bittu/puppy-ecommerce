@@ -24,7 +24,7 @@ class SubCategoryController extends Controller
     public function create()
     {
         $data['category'] = Category::all();
-        return view('admin.subcategory.create-subcategory', ['data',$data]);
+        return view('admin.subcategory.create-subcategory', ['data' => $data]);
     }
 
     /**
@@ -33,13 +33,15 @@ class SubCategoryController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'name' => 'required|regex:/^[A-Za-z ]+$/i|unique:categories',
-            'slug' => 'required|unique:categories',
+            'name' => 'required|regex:/^[A-Za-z ]+$/i|unique:subcategories',
+            'slug' => 'required|unique:subcategories',
             'status' => 'required|boolean',
+            'category_id' => 'required|numeric',
         ]);
         $request["created_at"] = now();
         $request["updated_at"] = now();
         unset($request['_token'], $request['_method']);
+        // dd($request->all());
         Subcategory::insert($request->all());
 
         return redirect('admin/subcategory/create')->with('success_message', 'subcategory added successfully');
@@ -51,10 +53,9 @@ class SubCategoryController extends Controller
     public function show(string $id)
     {
         //
-        $subcategory = Subcategory::find($id);
-
-        $data = ['subcategory'];
-        return view('admin.subcategory.create-subcategory', compact($data));
+        $data['category'] = Category::all();
+        $data['subcategory'] = Subcategory::find($id);
+        return view('admin.subcategory.create-subcategory', ['data' => $data]);
     }
 
     /**
@@ -63,8 +64,8 @@ class SubCategoryController extends Controller
     public function update(Request $request, string $id)
     {
         $validated = $request->validate([
-            'name' => 'required|regex:/^[A-Za-z ]+$/i|unique:categories',
-            'slug' => 'required|unique:categories',
+            'name' => 'required|regex:/^[A-Za-z ]+$/i|unique:subcategories',
+            'slug' => 'required|unique:subcategories',
             'status' => 'required|boolean',
         ]);
         $request["updated_at"] = now();

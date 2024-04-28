@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Subcategory extends Model
 {
+    protected $fillable = ['status'];
     use HasFactory;
 }

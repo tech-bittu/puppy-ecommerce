@@ -23,7 +23,6 @@
                         <tr>
                             <th>Id</th>
                             <th>name</th>
-                            <th>Category</th>
                             <th>Slug</th>
                             <th>Action</th>
                         </tr>
@@ -49,16 +48,13 @@
             'serverSide': true,
             'serverMethod': 'post',
             'ajax': {
-                'url': '{{ url("api/admin/subcategorylist") }}/',
+                'url': '{{ url("api/admin/brandlist") }}/',
             },
             'columns': [{
                     data: 'id'
                 },
                 {
                     data: 'name'
-                },
-                {
-                    data: 'category'
                 },
                 {
                     data: 'slug'

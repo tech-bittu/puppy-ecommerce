@@ -1,7 +1,4 @@
 @extends('admin.layouts.app')
-@section('username')
-{{ auth('admin')->user()->name }}
-@endsection
 
 @section('content-wrapper')
 <div class="page-header">

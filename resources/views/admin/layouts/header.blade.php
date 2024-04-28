@@ -180,7 +180,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="../../index.html">
+                <a class="nav-link" href="{{ route('admin.dashboard') }}">
                     <span class="menu-title">Dashboard</span>
                     <i class="mdi mdi-home menu-icon"></i>
                 </a>
@@ -195,6 +195,19 @@
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="{{ route('puppies.create') }}">Add puppies</a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{ route('puppies.index') }}">Manage Puppies</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-category" aria-expanded="false" aria-controls="ui-basic-category">
+                    <span class="menu-title">Category Tab</span>
+                    <i class="menu-arrow"></i>
+                    <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                </a>
+                <div class="collapse" id="ui-basic-category">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('category.create') }}">Add category</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('category.index') }}">Manage category</a></li>
                     </ul>
                 </div>
             </li>

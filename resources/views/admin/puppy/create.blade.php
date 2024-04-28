@@ -1,8 +1,6 @@
 @extends('admin.layouts.app')
 @section('page-title') {{ 'Add puppy' }} @endsection
 @section('styles')
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <style>
     .select2-dropdown {
         top: 22px !important;
@@ -11,12 +9,12 @@
 </style>
 @endsection
 @section('content-wrapper')
-<div class="page-header d-none">
-    <h3 class="page-title"> Form elements </h3>
+<div class="page-header">
+    <h3 class="page-title"> Puppy </h3>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Forms</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+            <li class="breadcrumb-item"><a href="#">Puppies</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Puppies</li>
         </ol>
     </nav>
 </div>

@@ -23,9 +23,9 @@ class PuppyOveviewRequest extends FormRequest
     {
         return [
             'short_desc'=>'required',
-            'cover_image'=>'image|mimes:jpeg,png,gif|max:2048'
-            // 'status'=>'required',
-            // 'page_title'=>'required',
+            'cover_image'=>'image|mimes:jpeg,png,gif|max:2048',
+            'status'=>'required',
+            'page_title'=>'required',
             // 'robots'=>'required',
             // 'googlebot'=>'required',
         ];

@@ -4,6 +4,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('page-title','Admin') - PuppyUniverse</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset( 'admin-theme/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
@@ -56,7 +57,13 @@
   <script src="{{ asset( 'admin-theme/assets/js/hoverable-collapse.js') }}"></script>
   <script src="{{ asset( 'admin-theme/assets/js/misc.js') }}"></script>
   <!-- endinject -->
- 
+ <script>
+  $.ajaxSetup({
+    headers:{
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  })
+ </script>
   @yield('scripts')
   <!-- End custom js for this page -->
 </body>

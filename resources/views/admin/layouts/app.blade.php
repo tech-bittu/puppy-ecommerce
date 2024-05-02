@@ -9,6 +9,7 @@
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset( 'admin-theme/assets/vendors/mdi/css/materialdesignicons.min.css') }}">
   <link rel="stylesheet" href="{{ asset( 'admin-theme/assets/vendors/css/vendor.bundle.base.css') }}">
+  <link rel="stylesheet" href="{{ asset( 'admin-theme/assets/vendors/dropzone/min/dropzone.min.css') }}">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <!-- End plugin css for this page -->
@@ -56,6 +57,7 @@
   <script src="{{ asset( 'admin-theme/assets/js/off-canvas.js') }}"></script>
   <script src="{{ asset( 'admin-theme/assets/js/hoverable-collapse.js') }}"></script>
   <script src="{{ asset( 'admin-theme/assets/js/misc.js') }}"></script>
+  <script src="{{ asset( 'admin-theme/assets/vendors/dropzone/min/dropzone.min.js') }}"></script>
   <!-- endinject -->
  <script>
   $.ajaxSetup({

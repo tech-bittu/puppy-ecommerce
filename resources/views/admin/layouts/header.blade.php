@@ -202,7 +202,7 @@
                 <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-category" aria-expanded="false" aria-controls="ui-basic-category">
                     <span class="menu-title">Category Tab</span>
                     <i class="menu-arrow"></i>
-                    <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                    <i class="mdi  mdi-numeric-0-box menu-icon"></i>
                 </a>
                 <div class="collapse" id="ui-basic-category">
                     <ul class="nav flex-column sub-menu">
@@ -215,7 +215,7 @@
                 <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-subcategory" aria-expanded="false" aria-controls="ui-basic-subcategory">
                     <span class="menu-title">Subcategory Tab</span>
                     <i class="menu-arrow"></i>
-                    <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                    <i class="mdi mdi-numeric-1-box menu-icon"></i>
                 </a>
                 <div class="collapse" id="ui-basic-subcategory">
                     <ul class="nav flex-column sub-menu">
@@ -228,12 +228,25 @@
                 <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-brand" aria-expanded="false" aria-controls="ui-basic-brand">
                     <span class="menu-title">Brands Tab</span>
                     <i class="menu-arrow"></i>
-                    <i class="mdi mdi-crosshairs-gps menu-icon"></i>
+                    <i class="mdi mdi-numeric-2-box menu-icon"></i>
                 </a>
                 <div class="collapse" id="ui-basic-brand">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="{{ route('brand.create') }}">Add brand</a></li>
                         <li class="nav-item"> <a class="nav-link" href="{{ route('brand.index') }}">Manage brand</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic-product" aria-expanded="false" aria-controls="ui-basic-product">
+                    <span class="menu-title">Product Tab</span>
+                    <i class="menu-arrow"></i>
+                    <i class="mdi mdi-numeric-3-box menu-icon"></i>
+                </a>
+                <div class="collapse" id="ui-basic-product">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('products.create') }}">Add product</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('products.index') }}">Manage product</a></li>
                     </ul>
                 </div>
             </li>

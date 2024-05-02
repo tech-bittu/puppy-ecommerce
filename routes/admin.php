@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminPanel\PuppyController;
 use App\Http\Controllers\AdminPanel\PuppyDescController;
 use App\Http\Controllers\AdminPanel\SubCategoryController;
 use App\Http\Controllers\AdminPanel\BrandsController;
+use App\Http\Controllers\AdminPanel\ProductsController;
 use App\Http\Middleware\AdminAuth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,9 @@ Route::middleware([AdminAuth::class])->group(function () {
         // ##  *********************************** Brand controller
         Route::resource('/brand',BrandsController::class);
         Route::get('/brand/status/{id}',[BrandsController::class,'status'])->name('admin.brand.status');
+        // ##  *********************************** Product controller
+        Route::resource('/products',ProductsController::class);
+        Route::get('/products/status/{id}',[ProductsController::class,'status'])->name('admin.products.status');
     });
 });
+Route::post('/products/temp',[ProductsController::class,'temp'])->name('temp-images.create');

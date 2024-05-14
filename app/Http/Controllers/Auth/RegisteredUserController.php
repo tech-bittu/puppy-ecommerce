@@ -19,7 +19,11 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        if(Auth::check())
+        {
+            return redirect()->route('dashboard');
+        }
+        return view('Web.static.login');
     }
 
     /**

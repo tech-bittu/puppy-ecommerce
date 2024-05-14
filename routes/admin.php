@@ -34,3 +34,4 @@ Route::middleware([AdminAuth::class])->group(function () {
     });
 });
 Route::post('/products/temp',[ProductsController::class,'temp'])->name('temp-images.create');
+Route::get('/products/emptytemp',[ProductsController::class,'emptyTemp'])->name('temp.emptytemp');

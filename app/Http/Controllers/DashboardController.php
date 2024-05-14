@@ -16,7 +16,7 @@ class DashboardController extends Controller
      */
     public function edit(Request $request): View
     {
-        return view('admin.profile.edit', [
+        return view('profile.edit', [
             'user' => $request->user(),
         ]);
     }
@@ -34,7 +34,7 @@ class DashboardController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('admin.profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
     /**
@@ -55,6 +55,6 @@ class DashboardController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return Redirect::to('/admin/login');
+        return Redirect::to('/login');
     }
 }

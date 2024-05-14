@@ -16,7 +16,12 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('auth.login');
+        if(Auth::check())
+        {
+            return redirect()->route('dashboard');
+        }
+        // return view('auth.login');
+        return view('Web.static.login');
     }
 
     /**
@@ -36,12 +41,12 @@ class AuthenticatedSessionController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
-        Auth::guard('admin')->logout();
+        Auth::guard('web')->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return redirect('/admin/login');
+        return redirect('/login');
     }
 }

@@ -147,6 +147,11 @@
                     </button>
                 </form>
             </li>
+            <li class="<?php  if(url()->current()==route('admin.dashboard')){echo 'nav-item nav-settings';}else{echo 'd-none';} ?>">
+                <a class="nav-link " href="{{route('temp.emptytemp') }}">
+                    <i class="mdi mdi-delete-forever"></i>
+                </a>
+            </li>
             <li class="nav-item nav-settings d-none d-lg-block">
                 <a class="nav-link" href="#">
                     <i class="mdi mdi-format-line-spacing"></i>

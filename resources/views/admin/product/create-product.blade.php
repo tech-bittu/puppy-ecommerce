@@ -300,9 +300,21 @@ $editBoolean = true;
                                     <br>Drop files here or click to upload.<br><br>
                                 </div>
                             </div>
-                            <div id="image-gallary" class="row row-cols-1 row-cols-md-6 g-4 mb-4"></div>
+                            <div id="image-gallary" class="row row-cols-1 row-cols-md-6 g-4 mb-4">
+                                @if($editBoolean)
+
+                                @foreach($data['gallery'] as $gallary)
+
+                                <div class="card">
+                                    <img src="{{ asset('uploads/product/small/'.$gallary->image) }}" height="100px" alt="" srcset="">
+                                    <button onclick="removeEdit('{{asset('/uploads/product/small/'.$gallary->image)}}')" type="button" class="card-footer bg-transparent border-success">Remove</button>
+                                </div>
+                                @endforeach
+                                @endif
+                            </div>
                         </div>
-                        <input type="hidden" name="image_gallery" value="{{ old('image_gallery') }}">
+
+                        <input type="hidden" name="image_gallery" class="{{ $editBoolean ? 'editActive':'' }}" value="{{$editBoolean ? $data['inputValue'] : old('image_gallery') }}">
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -360,8 +372,7 @@ $editBoolean = true;
                 $dd = $("input[name='image_gallery']").val($previouseImage);
                 $('#image-gallary').append('<div class="col" > <div style="height:164px;" class="card"><img src="{{ asset("temp")}}/' + response + '" class="preview-temp h-100"/> <button onclick="remove(\'' + response + '\')" type="button" class="card-footer bg-transparent border-success">Remove</button></div></div>')
             },
-            complete:function(file)
-            {
+            complete: function(file) {
                 this.removeFile(file);
             }
         });
@@ -369,7 +380,6 @@ $editBoolean = true;
         function addValue() {
             $("input[name='image_gallery']").val('');
             $("#image-gallary img").each(function(e) {
-                console.log($(e))
                 let value = $("input[name='image_gallery']").val();
                 let previouseImage = $(e).attr('src');
                 valueIn = value + ',' + previouseImage
@@ -377,7 +387,9 @@ $editBoolean = true;
             });
         }
 
-        $("#image-gallary").on('change', addValue())
+
+
+        $("#image").on('change', addValue())
 
         function remove(id) {
             $(`img[src="{{ asset("temp")}}/${id}"]`).parent().parent().remove();
@@ -385,11 +397,33 @@ $editBoolean = true;
             var images = '';
             $("#image-gallary img").each(function() {
                 if (this.src) {
-                    images =  this.src  +','+ images;
+                    images = this.src + ',' + images;
                 }
             });
             $("input[name='image_gallery']").val(images)
         }
+
+        function removeEdit(id) {
+            $(`img[src="${id}"]`).parent().remove();
+            // addValue()
+            var images = '';
+            $("#image-gallary img").each(function() {
+                if (this.src) {
+                    images = this.src + ',' + images;
+                }
+            });
+            $("input[name='image_gallery']").val(images)
+        }
+        // set value on edit
+        setTimeout(() => {
+            var images = '';
+            $("#image-gallary img").each(function() {
+                if (this.src) {
+                    images = this.src + ',' + images;
+                }
+            });
+            $("input[name='image_gallery']").val(images)
+        }, 1000);
     </script>
     <script src="{{asset('admin-theme/assets/vendors/tinymce/tinymce.min.js') }}"></script>
     <script src="{{asset('admin-theme/assets/vendors/tinymce/init-tinymce.js') }}"></script>
